@@ -9,6 +9,8 @@ enum typeOfWarship {
 };
 
 struct DefenceParameters {
+    float hp, baseHp;
+    unsigned int armor;
     double agility;
     double camouflage;
     double chanceForArson;
@@ -27,15 +29,20 @@ struct OffenceParameters {
     unsigned int torpedoRange;
     unsigned int amountOfSquadrons;
     unsigned int aircraftInSquadron;
+    unsigned int dmgPerSquadron;
+    float hpPerSquadron, baseHpPerSquadron;
 };
 
 class Warship {
     string _name;
-    typeOfWarship type;
-    double _hp, baseHp;
+    typeOfWarship _type;
+    DefenceParameters _defence;
+    OffenceParameters _offence;
 
 public:
     Warship();
+
+    Warship(string name, typeOfWarship type);
 
     string name();
 

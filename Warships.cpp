@@ -15,3 +15,9 @@ double Warship::hp() {
     return _hp;
 }
 
+Warship::Warship(string name, typeOfWarship type) {
+
+}
+
+
+
