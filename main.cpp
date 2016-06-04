@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     if (argc == 1) srand(atoi(argv[1]));
     else srand(time(NULL));
 
-    Parameters *parametersUSA = new Parameters[1];
+    Parameters *parametersUSA = new Parameters[15];
     Parameters *parametersJAPAN = new Parameters[15];
 
     if (read("USA.dat", parametersUSA))
@@ -47,14 +47,14 @@ bool read(const string &file_name, Parameters tab[]) {
     file.open(file_name.c_str());
     if (!file.good()) return false;
 
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 15; i++) {
         file >> tab[i].name;
 
         file >> typeOfWarship;
         if (typeOfWarship == 0) tab[i].type = DESTROYER;
         else if (typeOfWarship == 1) tab[i].type = CRUISER;
         else if (typeOfWarship == 2) tab[i].type = BATTLESHIP;
-        else if (typeOfWarship == 4) tab[i].type = AIRCRAFTCARRIER;
+        else if (typeOfWarship == 3) tab[i].type = AIRCRAFTCARRIER;
 
 
         file >> tab[i].baseHp;
@@ -82,7 +82,7 @@ bool read(const string &file_name, Parameters tab[]) {
 }
 
 void showParameters(Parameters *tab, int n) {
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 15; i++) {
         cout << "\n#### Numer statku: " << i + 1 << endl;
         cout << "\nNazwa: " << tab[i].name << endl;
 
@@ -117,6 +117,8 @@ void showParameters(Parameters *tab, int n) {
         cout << "Liczba samolotow w eskadrze: " << tab[i].aircraftInSquadron << endl;
         cout << "Dmg zadawany przez eskadre: " << tab[i].dmgPerSquadron << endl;
         cout << "HP eskadry: " << tab[i].baseHpPerSquadron << endl;
+
+        cout << "\n\n#################\n#################\n\n";
     }
 }
 
