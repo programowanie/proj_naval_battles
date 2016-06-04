@@ -9,53 +9,54 @@
 #include "Enemy.h"
 #include "Battle.h"
 
-void write(const string &file_name, DefenceParameters &defenceParametersStruct);
-
-void write(const string &file_name, OffenceParameters &offenceParametersStruct);
-
-void read(const string &file_name, DefenceParameters &defenceParametersStruct);
-
-void read(const string &file_name, OffenceParameters &offenceParametersStruct);
+bool read(const string &file_name, Parameters tab[]);
 
 int main(int argc, char *argv[]) {
-
     if (argc == 1) srand(atoi(argv[1]));
     else srand(time(NULL));
 
-    DefenceParameters TestDefenceParameters;
-    TestDefenceParameters.baseHp = 68000.0;
-    TestDefenceParameters.hp = TestDefenceParameters.baseHp;
-    TestDefenceParameters.armor = 10;
-    TestDefenceParameters.agility = 50;
-    TestDefenceParameters.camouflage = 123.432;
-    TestDefenceParameters.chanceForArson = 0.002;
-    TestDefenceParameters.amountOfAntiAircraftCannons = 50;
-    TestDefenceParameters.maxAntiAircraftCannonsDmg = 345;
+    Parameters *parametersUSA = new Parameters[1];
+    //Parameters *parametersJAPAN = new Parameters[15];
+    if (read("USA.dat", parametersUSA))
+        cout << "\nPoprawnie wczytano parametry statkow\nWyswietlic wczytane parametry? [t/n]: " << endl;
 
-    write("data.dat", TestDefenceParameters);
+    //read("JAPAN.dat", parametersJAPAN);
+
+
 
     Battle battle;
+
+    delete[] parametersUSA;
+    //delete [] parametersJAPAN;
+
     return 0;
 }
 
-void write(const string &file_name, DefenceParameters &defenceParametersStruct) {
-    ofstream out(file_name.c_str());
-    out.write(reinterpret_cast<char *> (&defenceParametersStruct), sizeof(DefenceParameters));
-}
+bool read(string file_name, Parameters tab[]) {
+    ifstream file;
+    file.open(file_name.c_str());
+    if (!file.good()) return false;
 
-void write(const string &file_name, OffenceParameters &offenceParametersStruct) {
-    ofstream out(file_name.c_str());
-    out.write(reinterpret_cast<char *> (&offenceParametersStruct), sizeof(OffenceParameters));
-}
-
-void read(const string &file_name, DefenceParameters &defenceParametersStruct) {
-    ifstream in(file_name.c_str());
-    in.read(reinterpret_cast<char *> (&defenceParametersStruct), sizeof(DefenceParameters));
-
-}
-
-void read(const string &file_name, OffenceParameters &offenceParametersStruct) {
-    ifstream in(file_name.c_str());
-    in.read(reinterpret_cast<char *> (&offenceParametersStruct), sizeof(OffenceParameters));
-
+    for (int i = 0; i < 1; i++) {
+        file >> tab[i].name;
+        file >> tab[i].baseHp;
+        file >> tab[i].armor;
+        file >> tab[i].agility;
+        file >> tab[i].camouflage;
+        file >> tab[i].chanceForArson;
+        file >> tab[i].amountOfAntiAircraftCannons;
+        file >> tab[i].maxAntiAircraftCannonsDmg;
+        file >> tab[i].amountOfCannons;
+        file >> tab[i].maxHeShellDmg;
+        file >> tab[i].maxApShellDmg;
+        file >> tab[i].firingRange;
+        file >> tab[i].chanceForArsonByHe;
+        file >> tab[i].amountOfTorpedos;
+        file >> tab[i].maxTorpedoDmg;
+        file >> tab[i].torpedoRange;
+        file >> tab[i].amountOfSquadrons;
+        file >> tab[i].aircraftInSquadron;
+        file >> tab[i].dmgPerSquadron;
+        file >> tab[i].baseHpPerSquadron;
+    }
 }

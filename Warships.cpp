@@ -7,7 +7,7 @@ using namespace std;
 Warship::Warship() {
     exit(0);
 }
-
+/*
 Warship::Warship(string name, typeOfWarship type, DefenceParameters defence, OffenceParameters offence) {
     _name = name;
     _type = type;
@@ -43,3 +43,4 @@ string Warship::name() {
 double Warship::hp() {
     return _defence.hp;
 }
+*/
