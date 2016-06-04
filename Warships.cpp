@@ -1,4 +1,5 @@
 #include <cstdlib>
+
 #include "Warships.h"
 
 using namespace std;
@@ -40,5 +41,5 @@ string Warship::name() {
 }
 
 double Warship::hp() {
-    return _hp;
+    return _defence.hp;
 }
