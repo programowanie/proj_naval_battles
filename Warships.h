@@ -42,7 +42,7 @@ class Warship {
 public:
     Warship();
 
-    Warship(string name, typeOfWarship type);
+    Warship(string name, typeOfWarship type, DefenceParameters defence, OffenceParameters offence);
 
     string name();
 
