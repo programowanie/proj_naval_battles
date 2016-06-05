@@ -137,31 +137,32 @@ void Enemy::showEnemy() {
     cout << "\nStrona: ";
     switch (_site) {
         case USA:
-            cout << "USA\n" << endl;
+            cout << "USA" << endl;
             break;
         case JAPAN:
-            cout << "JAPONIA\n" << endl;
+            cout << "JAPONIA" << endl;
             break;
     }
 
-    cout << "\nNISZCZYCIELE:";
+    cout << "\nNISZCZYCIELE\n";
+    cout << "NR " << "Nazwa" << "    HP" << endl;
     for (int i = 0; i < 4; i++) {
-        cout << "\n" << i + 1 << ". ";
+        cout << "\n" << i + 1 << ". " << _destroyers[i].name() << " " << _destroyers[i].hp();
         which++;
     }
-    cout << "\nKRAZOWNIKI:";
+    cout << "\n\nKRAZOWNIKI:";
     for (int i = 0; i < 4; i++) {
-        cout << "\n" << i + 1 << ". ";
+        cout << "\n" << i + 1 << ". " << _cruisers[i].name() << " " << _cruisers[i].hp();
         which++;
     }
-    cout << "\nPANCERNIKI:";
+    cout << "\n\nPANCERNIKI:";
     for (int i = 0; i < 4; i++) {
-        cout << "\n" << i + 1 << ". ";
+        cout << "\n" << i + 1 << ". " << _battleships[i].name() << " " << _battleships[i].hp();
         which++;
     }
-    cout << "\nLOTNISKOWCE:";
-    for (int i = 0; i < 4; i++) {
-        cout << "\n" << i + 1 << ". ";
+    cout << "\n\nLOTNISKOWCE:";
+    for (int i = 0; i < 3; i++) {
+        cout << "\n" << i + 1 << ". " << _aircraftCarriers[i].name() << " " << _aircraftCarriers[i].hp();
         which++;
     }
     cout << endl << endl;

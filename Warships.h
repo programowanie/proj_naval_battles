@@ -46,6 +46,8 @@ protected:
 public:
     void Init(Parameters parameters[], unsigned int i);
     string name();
+
+    float hp();
 };
 
 class Warship {
@@ -61,7 +63,7 @@ public:
     void Init(Parameters parameters[], unsigned int i);
 };
 
-class Destroyer : Ship, Warship {
+class Destroyer : public Ship, public Warship {
     unsigned int _amountOfTorpedos;
     unsigned int _maxTorpedoDmg;
     unsigned int _torpedoRange;
@@ -70,22 +72,21 @@ public:
     Destroyer(Parameters parameters[], unsigned int i);
 };
 
-class Cruiser : Ship, Warship {
+class Cruiser : public Ship, public Warship {
 public:
     Cruiser(Parameters parameters[], unsigned int i);
 };
 
-class Battleship : Ship, Warship {
+class Battleship : public Ship, public Warship {
 public:
     Battleship(Parameters parameters[], unsigned int i);
 };
 
-class AircraftCarrier : Ship {
+class AircraftCarrier : public Ship {
     unsigned int _amountOfSquadrons;
     unsigned int _aircraftInSquadron;
     unsigned int _dmgPerSquadron;
     float _baseHpPerSquadron;
-    float *_hp;
 public:
     AircraftCarrier(Parameters parameters[], unsigned int i);
 };

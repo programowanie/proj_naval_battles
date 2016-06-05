@@ -58,12 +58,14 @@ AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     _dmgPerSquadron = parameters[i].dmgPerSquadron;
     _baseHpPerSquadron = parameters[i].baseHpPerSquadron;
 
-    _hp = new float[_aircraftInSquadron];
-    for (int j = 0; j < _aircraftInSquadron; j++) _hp[j] = _baseHpPerSquadron;
-
     Ship::Init(parameters, i);
 }
 
 string Ship::name() {
     return _name;
 }
+
+float Ship::hp() {
+    return _hp;
+}
+

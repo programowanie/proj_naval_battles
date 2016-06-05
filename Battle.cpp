@@ -12,7 +12,8 @@ bool Battle::mainLoop() {
 }
 
 void Battle::show() {
-
+    _site[0].showEnemy();
+    _site[1].showEnemy();
 }
 
 Battle::Battle() {
