@@ -41,7 +41,6 @@ Destroyer::Destroyer(Parameters parameters[], unsigned int i) {
     Warship::Init(parameters, i);
 }
 
-
 Cruiser::Cruiser(Parameters parameters[], unsigned int i) {
     Ship::Init(parameters, i);
     Warship::Init(parameters, i);
@@ -53,7 +52,6 @@ Battleship::Battleship(Parameters *parameters, unsigned int i) {
     Warship::Init(parameters, i);
 }
 
-
 AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     _amountOfSquadrons = parameters[i].amountOfSquadrons;
     _aircraftInSquadron = parameters[i].aircraftInSquadron;
@@ -64,4 +62,8 @@ AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     for (int j = 0; j < _aircraftInSquadron; j++) _hp[i] = _baseHpPerSquadron;
 
     Ship::Init(parameters, i);
+}
+
+string Ship::name() {
+    return _name;
 }

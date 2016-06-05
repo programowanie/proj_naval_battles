@@ -28,4 +28,6 @@ class Enemy {
     vector<AircraftCarrier> _aircraftCarriers;
 public:
     Enemy(site s);
+
+    void showEnemy();
 };

@@ -3,8 +3,14 @@
 #include "Enemy.h"
 
 class Battle {
-    Enemy *_site1 = new Enemy(USA);
-    Enemy *_site2 = new Enemy(JAPAN);
+    Enemy *_site1;
+    Enemy *_site2;
 public:
-    void mainLoop();
+    Battle();
+
+    ~Battle();
+
+    bool mainLoop();
+
+    void show();
 };

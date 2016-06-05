@@ -100,6 +100,8 @@ Enemy::Enemy(site enemy) {
             break;
     }
 
+    cout << "\nPoprawnie wczytano parametry!\n";
+
     _site = enemy;
 
     for (int i = 0; i < 4; i++) {
@@ -124,4 +126,43 @@ Enemy::Enemy(site enemy) {
 
     delete[] parameters;
 }
+
+void Enemy::showEnemy() {
+    cin.sync();
+    unsigned int which = 0;
+    cout << "Strona: ";
+    switch (_site) {
+        case USA:
+            cout << "USA\n" << endl;
+            break;
+        case JAPAN:
+            cout << "JAPONIA\n" << endl;
+            break;
+    }
+
+    cout << "\nNISZCZYCIELE:";
+    for (int i = 0; i < 4; i++) {
+        cout << "\n" << i + 1 << ". ";
+        which++;
+    }
+    cout << "\nKRAZOWNIKI:";
+    for (int i = 0; i < 4; i++) {
+        cout << "\n" << i + 1 << ". ";
+        which++;
+    }
+    cout << "\nPANCERNIKI:";
+    for (int i = 0; i < 4; i++) {
+        cout << "\n" << i + 1 << ". ";
+        which++;
+    }
+    cout << "\nLOTNISKOWCE:";
+    for (int i = 0; i < 4; i++) {
+        cout << "\n" << i + 1 << ". ";
+        which++;
+    }
+    cout << endl << endl;
+    cin.sync();
+}
+
+
 
