@@ -100,29 +100,34 @@ Enemy::Enemy(site enemy) {
             break;
     }
 
-    cout << "\nPoprawnie wczytano parametry!\n";
+    cout << "Poprawnie wczytano parametry!\n";
 
     _site = enemy;
 
+
     for (int i = 0; i < 4; i++) {
-        _destroyers.push_back(Destroyer(parameters, which));
+        _destroyers = new Destroyer(parameters, which);
         which++;
     }
+
 
     for (int j = 0; j < 4; j++) {
-        _cruisers.push_back(Cruiser(parameters, which));
+        _cruisers = new Cruiser(parameters, which);
         which++;
     }
+
 
     for (int k = 0; k < 4; k++) {
-        _battleships.push_back(Battleship(parameters, which));
+        _battleships = new Battleship(parameters, which);
         which++;
     }
 
+
     for (int l = 0; l < 3; l++) {
-        _aircraftCarriers.push_back(AircraftCarrier(parameters, which));
+        _aircraftCarriers = new AircraftCarrier(parameters, which);
         which++;
     }
+
 
     delete[] parameters;
 }
@@ -130,7 +135,7 @@ Enemy::Enemy(site enemy) {
 void Enemy::showEnemy() {
     cin.sync();
     unsigned int which = 0;
-    cout << "Strona: ";
+    cout << "\nStrona: ";
     switch (_site) {
         case USA:
             cout << "USA\n" << endl;

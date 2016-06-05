@@ -59,7 +59,7 @@ AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     _baseHpPerSquadron = parameters[i].baseHpPerSquadron;
 
     _hp = new float[_aircraftInSquadron];
-    for (int j = 0; j < _aircraftInSquadron; j++) _hp[i] = _baseHpPerSquadron;
+    for (int j = 0; j < _aircraftInSquadron; j++) _hp[j] = _baseHpPerSquadron;
 
     Ship::Init(parameters, i);
 }
