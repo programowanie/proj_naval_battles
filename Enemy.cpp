@@ -108,17 +108,17 @@ Enemy::Enemy(site enemy) {
     }
 
     for (int j = 0; j < 4; j++) {
-        _cruisers.push_back(Cruiser());
+        _cruisers.push_back(Cruiser(parameters, which));
         which++;
     }
 
     for (int k = 0; k < 4; k++) {
-        _battleships.push_back(Battleship());
+        _battleships.push_back(Battleship(parameters, which));
         which++;
     }
 
     for (int l = 0; l < 3; l++) {
-        _aircraftCarriers.push_back(AircraftCarrier());
+        _aircraftCarriers.push_back(AircraftCarrier(parameters, which));
         which++;
     }
 

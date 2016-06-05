@@ -44,6 +44,7 @@ protected:
     double _chanceForArson;
 
 public:
+    void Init(Parameters parameters[], unsigned int i);
 };
 
 class Warship {
@@ -55,6 +56,8 @@ protected:
     unsigned int _chanceForArsonByHe;
     unsigned int _amountOfAntiAircraftCannons;
     unsigned int _maxAntiAircraftCannonsDmg;
+public:
+    void Init(Parameters parameters[], unsigned int i);
 };
 
 class Destroyer : Ship, Warship {
@@ -67,13 +70,21 @@ public:
 };
 
 class Cruiser : Ship, Warship {
-
+public:
+    Cruiser(Parameters parameters[], unsigned int i);
 };
 
 class Battleship : Ship, Warship {
-
+public:
+    Battleship(Parameters parameters[], unsigned int i);
 };
 
 class AircraftCarrier : Ship {
-
+    unsigned int _amountOfSquadrons;
+    unsigned int _aircraftInSquadron;
+    unsigned int _dmgPerSquadron;
+    float _baseHpPerSquadron;
+    float *_hp;
+public:
+    AircraftCarrier(Parameters parameters[], unsigned int i);
 };
