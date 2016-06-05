@@ -14,21 +14,22 @@ bool read(const string &file_name, Parameters tab[]);
 void showParameters(Parameters tab[], int n);
 
 int main(int argc, char *argv[]) {
+    cout << "## Naval Battles Simulator ##\n\n";
+
     if (argc == 1) srand(atoi(argv[1]));
     else srand(time(NULL));
 
     Parameters *parametersUSA = new Parameters[15];
     Parameters *parametersJAPAN = new Parameters[15];
 
-    if (read("USA.dat", parametersUSA))
+    if (read("USA.dat", parametersUSA) && read("JAPAN.dat", parametersJAPAN))
         cout << "\nPoprawnie wczytano parametry statkow\nWyswietlic wczytane parametry? [t/n]: ";
     char whatToDo;
     cin >> whatToDo;
-    if (whatToDo == 't') showParameters(parametersUSA, 1);
-
-    //read("JAPAN.dat", parametersJAPAN);
-
-
+    if (whatToDo == 't') {
+        showParameters(parametersUSA, 15);
+        showParameters(parametersJAPAN, 15);
+    }
 
     Battle battle;
 
@@ -82,7 +83,7 @@ bool read(const string &file_name, Parameters tab[]) {
 }
 
 void showParameters(Parameters *tab, int n) {
-    for (int i = 0; i < 15; i++) {
+    for (int i = 0; i < n; i++) {
         cout << "\n#### Numer statku: " << i + 1 << endl;
         cout << "\nNazwa: " << tab[i].name << endl;
 
