@@ -7,9 +7,6 @@
 
 #include "Warships.h"
 
-#define SOURCE_USA "USA.dat"
-#define SOURCE_JAPAN "JAPAN.dat"
-
 bool read(const string &file_name, Parameters tab[]);
 
 void showParameters(Parameters tab[], int n);

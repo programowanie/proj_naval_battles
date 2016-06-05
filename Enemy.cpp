@@ -6,6 +6,9 @@
 
 using namespace std;
 
+string sourceUSA = "USA.dat";
+string sourceJAPAN = "JAPAN.dat";
+
 bool read(const string &file_name, Parameters tab[]) {
     int typeOfWarship;
     ifstream file;
@@ -93,10 +96,10 @@ Enemy::Enemy(site enemy) {
 
     switch (enemy) {
         case USA:
-            read(SOURCE_USA, parameters);
+            read(sourceUSA, parameters);
             break;
         case JAPAN:
-            read(SOURCE_JAPAN, parameters);
+            read(sourceJAPAN, parameters);
             break;
     }
 
