@@ -22,10 +22,11 @@ enum site {
 
 class Enemy {
     site _site;
-    Destroyer *_destroyers;
-    Cruiser *_cruisers;
-    Battleship *_battleships;
-    AircraftCarrier *_aircraftCarriers;
+
+    vector<Destroyer> _destroyers;
+    vector<Cruiser> _cruisers;
+    vector<Battleship> _battleships;
+    vector<AircraftCarrier> _aircraftCarriers;
 public:
     Enemy(site s);
 

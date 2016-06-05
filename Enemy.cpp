@@ -104,27 +104,26 @@ Enemy::Enemy(site enemy) {
 
     _site = enemy;
 
-
     for (int i = 0; i < 4; i++) {
-        _destroyers = new Destroyer(parameters, which);
+        _destroyers.push_back(Destroyer(parameters, which));
         which++;
     }
 
 
-    for (int j = 0; j < 4; j++) {
-        _cruisers = new Cruiser(parameters, which);
+    for (int i = 0; i < 4; i++) {
+        _cruisers.push_back(Cruiser(parameters, which));
         which++;
     }
 
 
     for (int k = 0; k < 4; k++) {
-        _battleships = new Battleship(parameters, which);
+        _battleships.push_back(Battleship(parameters, which));
         which++;
     }
 
 
     for (int l = 0; l < 3; l++) {
-        _aircraftCarriers = new AircraftCarrier(parameters, which);
+        _aircraftCarriers.push_back(AircraftCarrier(parameters, which));
         which++;
     }
 

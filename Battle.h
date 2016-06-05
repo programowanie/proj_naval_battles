@@ -3,14 +3,10 @@
 #include "Enemy.h"
 
 class Battle {
-    Enemy *_site1;
-    Enemy *_site2;
+    vector<Enemy> _site;
+
 public:
     Battle();
-
-    ~Battle();
-
     bool mainLoop();
-
     void show();
 };
