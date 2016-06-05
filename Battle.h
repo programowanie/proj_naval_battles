@@ -4,4 +4,7 @@
 
 class Battle {
     Enemy site1, site2;
+
+public:
+
 };
