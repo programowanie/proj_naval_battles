@@ -13,7 +13,8 @@ int main(int argc, char *argv[]) {
     if (argc == 1) srand(atoi(argv[1]));
     else srand(time(NULL));
 
-    //Battle battle;
+    Battle navalBattle;
+    navalBattle.mainLoop();
 
     cin.sync();
     cin.get();
