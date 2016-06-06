@@ -11,5 +11,5 @@ public:
 
     unsigned int round();
 
-    void fight(unsigned int ship1, unsigned int ship2);
+    void fight(whichShip ship1, whichShip ship2);
 };
