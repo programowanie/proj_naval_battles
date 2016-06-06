@@ -33,18 +33,18 @@ Destroyer::Destroyer(Parameters parameters[], unsigned int i) {
     _amountOfAntiAircraftCannons = parameters[i].amountOfAntiAircraftCannons;
     _maxAntiAircraftCannonsDmg = parameters[i].maxAntiAircraftCannonsDmg;
 
-    Warship::Init(parameters, i);
+    Ship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
 Cruiser::Cruiser(Parameters parameters[], unsigned int i) {
-    Warship::Init(parameters, i);
+    Ship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
 
 Battleship::Battleship(Parameters *parameters, unsigned int i) {
-    Warship::Init(parameters, i);
+    Ship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
@@ -54,5 +54,5 @@ AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     _dmgPerSquadron = parameters[i].dmgPerSquadron;
     _baseHpPerSquadron = parameters[i].baseHpPerSquadron;
 
-    Warship::Init(parameters, i);
+    Ship::Init(parameters, i);
 }

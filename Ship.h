@@ -50,7 +50,7 @@ public:
     Battleship(Parameters parameters[], unsigned int i);
 };
 
-class AircraftCarrier : public Warship {
+class AircraftCarrier : public Ship {
     unsigned int _amountOfSquadrons;
     unsigned int _aircraftInSquadron;
     unsigned int _dmgPerSquadron;
