@@ -1,9 +1,4 @@
-#include <cstdlib>
-#include <iostream>
-
-#include "Warships.h"
-
-using namespace std;
+#include "Ship.h"
 
 void Ship::Init(Parameters *parameters, unsigned int i) {
     _name = parameters[i].name;
@@ -38,18 +33,18 @@ Destroyer::Destroyer(Parameters parameters[], unsigned int i) {
     _amountOfAntiAircraftCannons = parameters[i].amountOfAntiAircraftCannons;
     _maxAntiAircraftCannonsDmg = parameters[i].maxAntiAircraftCannonsDmg;
 
-    Ship::Init(parameters, i);
+    Warship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
 Cruiser::Cruiser(Parameters parameters[], unsigned int i) {
-    Ship::Init(parameters, i);
+    Warship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
 
 Battleship::Battleship(Parameters *parameters, unsigned int i) {
-    Ship::Init(parameters, i);
+    Warship::Init(parameters, i);
     Warship::Init(parameters, i);
 }
 
@@ -59,31 +54,5 @@ AircraftCarrier::AircraftCarrier(Parameters *parameters, unsigned int i) {
     _dmgPerSquadron = parameters[i].dmgPerSquadron;
     _baseHpPerSquadron = parameters[i].baseHpPerSquadron;
 
-    Ship::Init(parameters, i);
+    Warship::Init(parameters, i);
 }
-
-string Ship::name() {
-    return _name;
-}
-
-float Ship::hp() {
-    return _hp;
-}
-
-
-void Ship::info() {
-    cout << "Nazwa: " << _name << endl;
-    cout << "HP: " << _hp << endl;
-}
-
-bool Ship::isAlive() {
-    if (_hp <= 0) return false;
-    else return true;
-}
-
-
-
-
-
-
-

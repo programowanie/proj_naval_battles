@@ -12,7 +12,6 @@ int main(int argc, char *argv[]) {
     else seed = time(NULL);
 
     Battle navalBattle;
-    navalBattle.mainLoop();
 
     cin.sync();
     cin.get();

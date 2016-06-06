@@ -1,36 +1,7 @@
-#pragma once
+#ifndef PROJ_NAVAL_BATTLES_SHIP_H
+#define PROJ_NAVAL_BATTLES_SHIP_H
 
-#include <string>
-
-using namespace std;
-
-enum typeOfWarship {
-    DESTROYER, CRUISER, BATTLESHIP, AIRCRAFTCARRIER
-};
-
-struct Parameters {
-    string name;
-    typeOfWarship type;
-    float baseHp;
-    unsigned int armor;
-    double agility;
-    double camouflage;
-    double chanceForArson;
-    unsigned int amountOfAntiAircraftCannons;
-    unsigned int maxAntiAircraftCannonsDmg;
-    unsigned int amountOfCannons;
-    unsigned int maxHeShellDmg;
-    unsigned int maxApShellDmg;
-    unsigned int firingRange;
-    unsigned int chanceForArsonByHe;
-    unsigned int amountOfTorpedos;
-    unsigned int maxTorpedoDmg;
-    unsigned int torpedoRange;
-    unsigned int amountOfSquadrons;
-    unsigned int aircraftInSquadron;
-    unsigned int dmgPerSquadron;
-    float baseHpPerSquadron;
-};
+#include "Functions.cpp"
 
 class Ship {
 protected:
@@ -45,11 +16,6 @@ protected:
 
 public:
     void Init(Parameters parameters[], unsigned int i);
-    string name();
-    float hp();
-
-    bool isAlive();
-    void info();
 };
 
 class Warship {
@@ -84,7 +50,7 @@ public:
     Battleship(Parameters parameters[], unsigned int i);
 };
 
-class AircraftCarrier : public Ship {
+class AircraftCarrier : public Warship {
     unsigned int _amountOfSquadrons;
     unsigned int _aircraftInSquadron;
     unsigned int _dmgPerSquadron;
@@ -92,3 +58,5 @@ class AircraftCarrier : public Ship {
 public:
     AircraftCarrier(Parameters parameters[], unsigned int i);
 };
+
+#endif //PROJ_NAVAL_BATTLES_SHIP_H
