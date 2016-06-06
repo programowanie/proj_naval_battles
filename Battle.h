@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "Enemy.h"
 
 class Battle {

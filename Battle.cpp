@@ -25,7 +25,8 @@ unsigned int Battle::round() {
 }
 
 void Battle::fight(whichShip ship1, whichShip ship2) {
-
+    //_site[0].showShip(ship1);
+    //_site[1].showShip(ship2);
 }
 
 

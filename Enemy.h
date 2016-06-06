@@ -6,6 +6,7 @@
 #include <fstream>
 
 #include "Warships.h"
+#include "Battle.h"
 
 bool read(const string &file_name, Parameters tab[]);
 
@@ -29,9 +30,12 @@ protected:
     vector<Cruiser> _cruisers;
     vector<Battleship> _battleships;
     vector<AircraftCarrier> _aircraftCarriers;
+
 public:
     Enemy(site s);
 
     whichShip drawShip();
     void showEnemy();
+
+    void showShip(whichShip ship);
 };

@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <iostream>
 
 #include "Warships.h"
 
@@ -73,6 +74,13 @@ bool Ship::isAlive() {
     if (_hp <= 0) return false;
     else return true;
 }
+
+void Ship::info() {
+    cout << "Nazwa: " << _name << endl;
+    cout << "HP: " << _hp << endl;
+}
+
+
 
 
 

@@ -49,6 +49,8 @@ public:
 
     bool isAlive();
     float hp();
+
+    void info();
 };
 
 class Warship {

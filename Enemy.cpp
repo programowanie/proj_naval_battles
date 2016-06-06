@@ -208,6 +208,32 @@ whichShip Enemy::drawShip() {
     }
 }
 
+void Enemy::showShip(whichShip ship) {
+    switch (ship.typeOfShip) {
+        case 0:
+            cout << "TYP: niszczyciel" << endl;
+            _destroyers[ship.numberOfShip].info();
+            break;
+
+        case 1:
+            cout << "TYP: krazownik" << endl;
+            _cruisers[ship.numberOfShip].info();
+            break;
+
+        case 2:
+            cout << "TYP: pancernik" << endl;
+            _battleships[ship.numberOfShip].info();
+            break;
+
+        case 3:
+            cout << "TYP: lotniskowiec" << endl;
+            _aircraftCarriers[ship.numberOfShip].isAlive();
+            break;
+    }
+}
+
+
+
 
 
 
