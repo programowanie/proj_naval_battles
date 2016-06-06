@@ -22,6 +22,9 @@ class Battle {
     site _site[2];
 public:
     Battle();
+
+    void mainLoop();
+
 };
 
 #endif //PROJ_NAVAL_BATTLES_BATTLE_H

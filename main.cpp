@@ -11,6 +11,7 @@ int main(int argc, char *argv[]) {
     srand((unsigned int) seed);
 
     Battle navalBattle;
+    navalBattle.mainLoop();
 
     cin.sync();
     cin.get();

@@ -48,3 +48,8 @@ Battle::Battle() {
         delete[] wsk;
     }
 }
+
+void Battle::mainLoop() {
+    cout << "Czy statek zywy [1 - TAK / 0 - NIE]: " << _site[1]._destroyers[0].isAlive();
+}
+

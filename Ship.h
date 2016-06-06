@@ -16,6 +16,8 @@ protected:
 
 public:
     void Init(Parameters parameters[], unsigned int i);
+
+    bool isAlive();
 };
 
 class Warship {

@@ -11,6 +11,12 @@ void Ship::Init(Parameters *parameters, unsigned int i) {
     _chanceForArson = parameters[i].chanceForArson;
 }
 
+bool Ship::isAlive() {
+    if (_hp > 0) return true;
+    else return false;
+}
+
+
 void Warship::Init(Parameters *parameters, unsigned int i) {
     _amountOfCannons = parameters[i].amountOfCannons;
     _maxHeShellDmg = parameters[i].maxHeShellDmg;
