@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 #include <fstream>
+#include <cstdlib>
 
 #include "Enemy.h"
 
@@ -93,17 +93,24 @@ void showParameters(Parameters *tab, int n) {
 Enemy::Enemy(site enemy) {
     Parameters *parameters = new Parameters[15];
     unsigned int which = 0;
+    char whatToDo;
 
     switch (enemy) {
         case USA:
             read(sourceUSA, parameters);
+            cout << "Poprawnie wczytano parametry floty Stanow Zjednoczonych.";
+            cout << "\nCzy wyswietlic? [tT/nN]: ";
+            cin >> whatToDo;
+            if (whatToDo == 't' || whatToDo == 'T') showParameters(parameters, 15);
             break;
         case JAPAN:
             read(sourceJAPAN, parameters);
+            cout << "Poprawnie wczytano parametry floty Japonskiej.";
+            cout << "\nCzy wyswietlic? [tT/nN]: ";
+            cin >> whatToDo;
+            if (whatToDo == 't' || whatToDo == 'T') showParameters(parameters, 15);
             break;
     }
-
-    cout << "Poprawnie wczytano parametry!\n";
 
     _site = enemy;
 
@@ -171,6 +178,36 @@ void Enemy::showEnemy() {
     cout << endl << endl;
     cin.sync();
 }
+
+whichShip Enemy::drawShip() {
+    whichShip thisShip;
+    while (true) {
+        thisShip.typeOfShip = (rand() % 4) + 0;
+
+        if (thisShip.typeOfShip == 3)
+            thisShip.numberOfShip == (rand() % 3) + 0;
+        else thisShip.numberOfShip == (rand() % 4) + 0;
+
+        switch (thisShip.typeOfShip) {
+            case 0:
+                if (_destroyers[thisShip.numberOfShip].isAlive()) return thisShip;
+                break;
+
+            case 1:
+                if (_cruisers[thisShip.numberOfShip].isAlive()) return thisShip;
+                break;
+
+            case 2:
+                if (_battleships[thisShip.numberOfShip].isAlive()) return thisShip;
+                break;
+
+            case 3:
+                if (_aircraftCarriers[thisShip.numberOfShip].isAlive()) return thisShip;
+                break;
+        }
+    }
+}
+
 
 
 

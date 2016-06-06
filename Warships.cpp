@@ -69,3 +69,10 @@ float Ship::hp() {
     return _hp;
 }
 
+bool Ship::isAlive() {
+    if (_hp <= 0) return false;
+    else return true;
+}
+
+
+

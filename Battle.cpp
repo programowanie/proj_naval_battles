@@ -5,18 +5,30 @@
 using namespace std;
 
 bool Battle::mainLoop() {
-    show();
-    cin.sync();
-    cin.get();
-    return 0;
-}
+    unsigned int game = 1;
 
-void Battle::show() {
-    _site[0].showEnemy();
-    _site[1].showEnemy();
+    while (game) {
+        game = round();
+    }
+
+    return 0;
 }
 
 Battle::Battle() {
     _site.push_back(Enemy(USA));
     _site.push_back(Enemy(JAPAN));
 }
+
+unsigned int Battle::round() {
+    fight(_site[0].drawShip(), _site[1].drawShip());
+    return 0;
+}
+
+void Battle::fight(whichShip ship1, whichShip ship2) {
+
+}
+
+
+
+
+

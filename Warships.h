@@ -47,6 +47,7 @@ public:
     void Init(Parameters parameters[], unsigned int i);
     string name();
 
+    bool isAlive();
     float hp();
 };
 

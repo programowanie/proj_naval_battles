@@ -17,9 +17,14 @@ enum site {
     USA, JAPAN
 };
 
-class Enemy {
-    site _site;
+struct whichShip {
+    unsigned int typeOfShip;
+    unsigned int numberOfShip;
+};
 
+class Enemy {
+protected:
+    site _site;
     vector<Destroyer> _destroyers;
     vector<Cruiser> _cruisers;
     vector<Battleship> _battleships;
@@ -27,5 +32,6 @@ class Enemy {
 public:
     Enemy(site s);
 
+    whichShip drawShip();
     void showEnemy();
 };
