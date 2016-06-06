@@ -1,7 +1,7 @@
 #ifndef PROJ_NAVAL_BATTLES_SHIP_H
 #define PROJ_NAVAL_BATTLES_SHIP_H
 
-#include "Functions.cpp"
+#include "Functions.h"
 
 class Ship {
 protected:
