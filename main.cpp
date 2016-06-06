@@ -6,7 +6,6 @@
 
 int main(int argc, char *argv[]) {
     cout << "## Naval Battles Simulator ##\n\n";
-
     int seed;
     if (argc == 1) seed = atoi(argv[1]);
     else seed = time(NULL);
