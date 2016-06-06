@@ -6,7 +6,6 @@
 #include <fstream>
 
 #include "Warships.h"
-#include "Battle.h"
 
 bool read(const string &file_name, Parameters tab[]);
 

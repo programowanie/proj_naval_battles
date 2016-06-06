@@ -195,6 +195,7 @@ whichShip Enemy::drawShip() {
 
             case 1:
                 if (_cruisers[thisShip.numberOfShip].isAlive()) return thisShip;
+
                 break;
 
             case 2:
@@ -227,7 +228,7 @@ void Enemy::showShip(whichShip ship) {
 
         case 3:
             cout << "TYP: lotniskowiec" << endl;
-            _aircraftCarriers[ship.numberOfShip].isAlive();
+            _aircraftCarriers[ship.numberOfShip].info();
             break;
     }
 }

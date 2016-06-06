@@ -1,10 +1,13 @@
 #include <iostream>
+#include <cstdlib>
 
 #include "Battle.h"
 
 using namespace std;
 
 bool Battle::mainLoop() {
+    cout << "## Naval Battles Simulator ##\n\n";
+    system("cls");
     unsigned int game = 1;
 
     while (game) {
@@ -25,8 +28,9 @@ unsigned int Battle::round() {
 }
 
 void Battle::fight(whichShip ship1, whichShip ship2) {
-    //_site[0].showShip(ship1);
-    //_site[1].showShip(ship2);
+
+    _site[0].showShip(ship1);
+    _site[1].showShip(ship2);
 }
 
 
