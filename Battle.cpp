@@ -50,6 +50,7 @@ Battle::Battle() {
 }
 
 bool Battle::mainLoop() {
+    Ship *wsk;
     unsigned int turnNumber = 0;
 
     system("cls");
@@ -58,8 +59,20 @@ bool Battle::mainLoop() {
     showSites();
 
     cout << "TURA: " << turnNumber + 1 << endl;
+
     drawShip(0);
     drawShip(1);
+
+    while (!_qsite[0].empty()) {
+        wsk = _qsite[0].front();
+
+
+        if (this == NULL);
+        else if (wsk->whatType() == AIRCRAFTCARRIER)
+            cout << wsk->numberOfSquadrons() << endl;
+
+        _qsite[0].pop();
+    }
 }
 
 void Battle::showSites() {
@@ -89,31 +102,40 @@ void Battle::showSites() {
 
 void Battle::drawShip(unsigned int n) {
     Ship *wsk = NULL;
+
     int what, which;
+    int drawn[4][4]{};
+
     for (int i = 0; i < 15; i++) {
-        what = rand() % 3;
+
+        while (true) {
+            what = rand() % 4;
+            if (what == 3) which = rand() % 3;
+            else which = rand() % 4;
+
+            if (drawn[what][which] == 0) {
+                drawn[what][which] = 1;
+                break;
+            }
+        }
 
         switch (what) {
             case 0:
-                which = rand() % 3;
                 if (_site[n]._destroyers[which].isAlive()) wsk = &_site[n]._destroyers[which];
                 else wsk = NULL;
                 _qsite[n].push(wsk);
                 break;
             case 1:
-                which = rand() % 3;
                 if (_site[n]._cruisers[which].isAlive()) wsk = &_site[n]._cruisers[which];
                 else wsk = NULL;
                 _qsite[n].push(wsk);
                 break;
             case 2:
-                which = rand() % 3;
                 if (_site[n]._battleships[which].isAlive()) wsk = &_site[n]._battleships[which];
                 else wsk = NULL;
                 _qsite[n].push(wsk);
                 break;
             case 3:
-                which = rand() % 2;
                 if (_site[n]._aircraftCarriers[which].isAlive()) wsk = &_site[n]._aircraftCarriers[which];
                 else wsk = NULL;
                 _qsite[n].push(wsk);
