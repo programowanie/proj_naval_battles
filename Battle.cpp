@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "Battle.h"
 #include <windows.h>
 
@@ -185,9 +184,48 @@ int Battle::drawShip(unsigned int n) {
 }
 
 int war(Ship *wsk1, Ship *wsk2) {
-    cout << wsk1->_name << " " << wsk1->_hp << "HP atakuje: " << wsk2->_name << " " << wsk2->_hp << "HP zadajac: " <<
-    wsk1->_maxApShellDmg << " obrazen." << endl;
-    wsk2->_hp -= 7000;
+    int x = 0;
+
+    if (wsk1->isDead()) {
+        cout << " " << wsk1->_name << " nie atakuje - zostal zniszczony w jednym z poprzednich atakow." << endl;
+        return 0;
+    }
+    cout << wsk1->_name << " " << wsk1->_hp << "HP atakuje: " << wsk2->_name << " " << wsk2->_hp << "HP" << endl;
+    cout << "   za pomoca";
+
+    if (wsk1->_type == DESTROYER) {
+        x = rand() % 3;
+        if (x == 0) {
+            cout << " pocisku AP zadajac ";
+            cout << wsk1->_maxApShellDmg;
+            wsk2->_hp -= wsk1->_maxApShellDmg;
+        } else if (x == 1) {
+            cout << " pocisku HE zadajac ";
+            cout << wsk1->_maxHeShellDmg;
+            wsk2->_hp -= wsk1->_maxHeShellDmg;
+        } else {
+            cout << " torpedy zadajac ";
+            cout << wsk1->_maxTorpedoDmg;
+            wsk2->_hp -= wsk1->_maxTorpedoDmg;
+        }
+    } else if (wsk1->_type == CRUISER || wsk1->_type == BATTLESHIP) {
+        x = rand() % 2;
+        if (x == 0) {
+            cout << " pocisku AP zadajac ";
+            cout << wsk1->_maxApShellDmg;
+            wsk2->_hp -= wsk1->_maxApShellDmg;
+        } else if (x == 1) {
+            cout << " pocisku HE zadajac ";
+            cout << wsk1->_maxHeShellDmg;
+            wsk2->_hp -= wsk1->_maxHeShellDmg;
+        }
+    } else if (wsk1->_type == AIRCRAFTCARRIER) {
+        cout << " eskadry zadajac ";
+        cout << wsk1->_dmgPerSquadron;
+        wsk2->_hp -= wsk1->_dmgPerSquadron;
+    }
+
+    cout << " obrazen." << endl;
     return 0;
 }
 

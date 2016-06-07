@@ -3,6 +3,9 @@
 
 #include "Functions.h"
 
+using namespace std;
+
+
 class Ship {
 protected:
     string _name;
