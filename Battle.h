@@ -25,6 +25,7 @@ public:
 
     void mainLoop();
 
+    void showSites();
 };
 
 #endif //PROJ_NAVAL_BATTLES_BATTLE_H
