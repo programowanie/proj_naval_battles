@@ -49,11 +49,17 @@ Battle::Battle() {
     }
 }
 
-void Battle::mainLoop() {
+bool Battle::mainLoop() {
+    unsigned int turnNumber = 0;
+
     system("cls");
     cout << "                           ## Naval Battles ##" << endl;
     cout << "                        Symulator bitwy morskiej." << endl << endl;
     showSites();
+
+    cout << "TURA: " << turnNumber + 1 << endl;
+    drawShip(0);
+    drawShip(1);
 }
 
 void Battle::showSites() {
@@ -74,13 +80,47 @@ void Battle::showSites() {
     cout << "STATYSTYKI" << endl << endl;
     cout << "                  " << _site[0].siteName << "             " << _site[1].siteName << endl;
     cout << "Typ statku:       Ilosc:          Ilosc:" << endl << endl;
-    cout << "niszczyciele      " << destroyers[0][0] << "               " << destroyers[1][1] << endl;
-    cout << "krazowniki        " << cruisers[0][0] << "               " << cruisers[1][1] << endl;
-    cout << "pancerniki        " << battleships[0][0] << "               " << battleships[1][1] << endl;
-    cout << "lotniskowce       " << aircraftCarriers[0][0] << "               " << aircraftCarriers[1][1] << endl;
+    cout << "niszczyciel       " << destroyers[0][0] << "               " << destroyers[1][1] << endl;
+    cout << "krazownik         " << cruisers[0][0] << "               " << cruisers[1][1] << endl;
+    cout << "pancernik         " << battleships[0][0] << "               " << battleships[1][1] << endl;
+    cout << "lotniskowiec      " << aircraftCarriers[0][0] << "               " << aircraftCarriers[1][1] << endl <<
+    endl;
 }
 
+void Battle::drawShip(unsigned int n) {
+    Ship *wsk = NULL;
+    int what, which;
+    for (int i = 0; i < 15; i++) {
+        what = rand() % 3;
 
-
-
-
+        switch (what) {
+            case 0:
+                which = rand() % 3;
+                if (_site[n]._destroyers[which].isAlive()) wsk = &_site[n]._destroyers[which];
+                else wsk = NULL;
+                _qsite[n].push(wsk);
+                break;
+            case 1:
+                which = rand() % 3;
+                if (_site[n]._cruisers[which].isAlive()) wsk = &_site[n]._cruisers[which];
+                else wsk = NULL;
+                _qsite[n].push(wsk);
+                break;
+            case 2:
+                which = rand() % 3;
+                if (_site[n]._battleships[which].isAlive()) wsk = &_site[n]._battleships[which];
+                else wsk = NULL;
+                _qsite[n].push(wsk);
+                break;
+            case 3:
+                which = rand() % 2;
+                if (_site[n]._aircraftCarriers[which].isAlive()) wsk = &_site[n]._aircraftCarriers[which];
+                else wsk = NULL;
+                _qsite[n].push(wsk);
+                break;
+            default:
+                cout << "Blad podczas losowania statku" << endl;
+                break;
+        }
+    }
+}

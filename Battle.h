@@ -2,6 +2,7 @@
 #define PROJ_NAVAL_BATTLES_BATTLE_H
 
 #include <vector>
+#include <queue>
 #include <iterator>
 #include <string>
 
@@ -20,11 +21,14 @@ struct site {
 
 class Battle {
     site _site[2];
+    queue<Ship *> _qsite[2];
+
 public:
     Battle();
 
-    void mainLoop();
+    bool mainLoop();
 
+    void drawShip(unsigned int n);
     void showSites();
 };
 

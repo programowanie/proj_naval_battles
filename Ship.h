@@ -16,8 +16,9 @@ protected:
 
 public:
     void Init(Parameters parameters[], unsigned int i);
-
     bool isAlive();
+
+    virtual void attack() = 0;
 };
 
 class Warship {
@@ -40,16 +41,22 @@ class Destroyer : public Ship, public Warship {
 
 public:
     Destroyer(Parameters parameters[], unsigned int i);
+
+    virtual void attack() { };
 };
 
 class Cruiser : public Ship, public Warship {
 public:
     Cruiser(Parameters parameters[], unsigned int i);
+
+    virtual void attack() { };
 };
 
 class Battleship : public Ship, public Warship {
 public:
     Battleship(Parameters parameters[], unsigned int i);
+
+    virtual void attack() { };
 };
 
 class AircraftCarrier : public Ship {
@@ -59,6 +66,8 @@ class AircraftCarrier : public Ship {
     float _baseHpPerSquadron;
 public:
     AircraftCarrier(Parameters parameters[], unsigned int i);
+
+    virtual void attack() { };
 };
 
 #endif //PROJ_NAVAL_BATTLES_SHIP_H
