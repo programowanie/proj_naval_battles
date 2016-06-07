@@ -36,6 +36,8 @@ public:
     virtual unsigned int numberOfSquadrons() = 0;
 
     typeOfWarship whatType() { return _type; };
+
+    friend void makeDead(Ship *wsk);
 };
 
 class Destroyer : public Ship {

@@ -31,6 +31,11 @@ bool Ship::isAlive() {
     else return false;
 }
 
+void makeDead(Ship *wsk) {
+    wsk->_hp = 0;
+}
+
+
 Destroyer::Destroyer(Parameters parameters[], unsigned int i) {
     Ship::Init(parameters, i);
 }

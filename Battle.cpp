@@ -68,11 +68,16 @@ bool Battle::mainLoop() {
 
 
         if (this == NULL);
-        else if (wsk->whatType() == AIRCRAFTCARRIER)
+        else if (wsk->whatType() == AIRCRAFTCARRIER) {
             cout << wsk->numberOfSquadrons() << endl;
+            makeDead(wsk);
+        }
+
 
         _qsite[0].pop();
     }
+
+    drawShip(0);
 }
 
 void Battle::showSites() {
