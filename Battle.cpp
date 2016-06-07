@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Battle.h"
-#include <windows.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -55,7 +55,7 @@ bool Battle::mainLoop() {
     int end = 0;
 
     while (!end) {
-        system("cls");
+        system("clear");
         cout << "                           ## Naval Battles ##" << endl;
         cout << "                        Symulator bitwy morskiej." << endl << endl;
         showSites();
@@ -187,7 +187,7 @@ int war(Ship *wsk1, Ship *wsk2) {
     int x = 0;
 
     if (wsk1->isDead()) {
-        cout << " " << wsk1->_name << " nie atakuje - zostal zniszczony w jednym z poprzednich atakow." << endl;
+        cout << " " << wsk1->_name << " nie atakuje - zostal zniszczony w jednym z poprzednich atakow." << endl << endl;
         return 0;
     }
     cout << wsk1->_name << " " << wsk1->_hp << "HP atakuje: " << wsk2->_name << " " << wsk2->_hp << "HP" << endl;
@@ -225,7 +225,7 @@ int war(Ship *wsk1, Ship *wsk2) {
         wsk2->_hp -= wsk1->_dmgPerSquadron;
     }
 
-    cout << " obrazen." << endl;
+    cout << " obrazen." << endl << endl;
     return 0;
 }
 
@@ -235,7 +235,7 @@ int Battle::turn(int wf) {
 
     for (int i = _qsite[0].size(), j = _qsite[1].size(), k = 0;
          !_qsite[0].empty() && !_qsite[1].empty(); i--, j--, k++) {
-        Sleep(500);
+        usleep(1000000);
         cout << k + 1 << ". ";
         switch (wf) {
             case 0:
@@ -263,6 +263,6 @@ int Battle::turn(int wf) {
         }
     }
 
-    Sleep(500);
+    usleep(1000000);
     return 0;
 }
