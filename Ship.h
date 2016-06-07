@@ -31,6 +31,8 @@ public:
 
     bool isAlive();
 
+    bool isDead();
+
     virtual void attack() = 0;
 
     virtual unsigned int numberOfSquadrons() = 0;
@@ -40,6 +42,8 @@ public:
     friend void makeDead(Ship *wsk);
 
     friend int war(Ship *wsk1, Ship *wsk2);
+
+    void description(Ship *wsk1, Ship *wsk2);
 };
 
 class Destroyer : public Ship {

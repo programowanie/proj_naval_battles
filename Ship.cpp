@@ -1,3 +1,5 @@
+#include <iostream>
+
 #include "Ship.h"
 
 void Ship::Init(Parameters *parameters, unsigned int i) {
@@ -33,6 +35,15 @@ bool Ship::isAlive() {
 
 void makeDead(Ship *wsk) {
     wsk->_hp = 0;
+}
+
+void Ship::description(Ship *wsk1, Ship *wsk2) {
+    cout << wsk1->_name << " atakuje ";
+}
+
+bool Ship::isDead() {
+    if (_hp > 0) return false;
+    else return true;
 }
 
 

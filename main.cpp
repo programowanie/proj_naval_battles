@@ -13,6 +13,9 @@ int main(int argc, char *argv[]) {
     Battle navalBattle;
     navalBattle.mainLoop();
 
+    cout << endl;
+    cout << "Wcisnij dowolny klawisz by zakonczyc: ";
+
     cin.sync();
     cin.get();
 

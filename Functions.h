@@ -8,6 +8,10 @@ enum typeOfWarship {
     DESTROYER, CRUISER, BATTLESHIP, AIRCRAFTCARRIER
 };
 
+enum attackType {
+    AP, HE, AACC
+};
+
 struct Parameters {
     string name;
     typeOfWarship type;

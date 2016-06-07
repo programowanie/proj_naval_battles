@@ -28,7 +28,7 @@ public:
 
     bool mainLoop();
 
-    void drawShip(unsigned int n);
+    int drawShip(unsigned int n);
     void showSites();
 
     int turn(int wf);
