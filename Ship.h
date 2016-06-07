@@ -38,6 +38,8 @@ public:
     typeOfWarship whatType() { return _type; };
 
     friend void makeDead(Ship *wsk);
+
+    friend int war(Ship *wsk1, Ship *wsk2);
 };
 
 class Destroyer : public Ship {

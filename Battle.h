@@ -30,6 +30,8 @@ public:
 
     void drawShip(unsigned int n);
     void showSites();
+
+    int turn(int wf);
 };
 
 #endif //PROJ_NAVAL_BATTLES_BATTLE_H

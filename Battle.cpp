@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Battle.h"
+#include <windows.h>
 
 using namespace std;
 
@@ -50,34 +51,31 @@ Battle::Battle() {
 }
 
 bool Battle::mainLoop() {
-    Ship *wsk;
-    unsigned int turnNumber = 0;
+    int turnNumber = 0;
+    int whoFirst;
+    int end = 0;
 
-    system("cls");
-    cout << "                           ## Naval Battles ##" << endl;
-    cout << "                        Symulator bitwy morskiej." << endl << endl;
-    showSites();
+    while (!end) {
+        system("cls");
+        cout << "                           ## Naval Battles ##" << endl;
+        cout << "                        Symulator bitwy morskiej." << endl << endl;
+        showSites();
 
-    cout << "TURA: " << turnNumber + 1 << endl;
+        cout << "TURA: " << turnNumber + 1 << endl;
 
-    drawShip(0);
-    drawShip(1);
+        drawShip(0);
+        drawShip(1);
 
-    while (!_qsite[0].empty()) {
-        wsk = _qsite[0].front();
+        whoFirst = rand() % 2;
+        cout << "Rozpoczyna: ";
 
+        if (whoFirst == 0) cout << _site[0].siteName << endl;
+        else cout << _site[1].siteName << endl;
+        cout << endl;
 
-        if (this == NULL);
-        else if (wsk->whatType() == AIRCRAFTCARRIER) {
-            cout << wsk->numberOfSquadrons() << endl;
-            makeDead(wsk);
-        }
-
-
-        _qsite[0].pop();
+        end = turn(whoFirst);
+        if (end == 0) turnNumber++;
     }
-
-    drawShip(0);
 }
 
 void Battle::showSites() {
@@ -150,4 +148,46 @@ void Battle::drawShip(unsigned int n) {
                 break;
         }
     }
+
+    wsk = NULL;
+}
+
+int war(Ship *wsk1, Ship *wsk2) {
+    Sleep(300);
+
+    cout << wsk1->whatType();
+
+
+    return 0;
+}
+
+int Battle::turn(int wf) {
+    Ship *ship0 = NULL, *ship1 = NULL;
+
+    switch (wf) {
+        case 0:
+            for (int i = 0; i < 15; i++) {
+                ship0 = _qsite[0].front();
+                _qsite[0].pop();
+                ship1 = _qsite[1].front();
+                _qsite[1].pop();
+
+                war(ship0, ship1);
+            }
+            break;
+        case 1:
+            for (int i = 0; i < 15; i++) {
+                ship0 = _qsite[1].front();
+                _qsite[1].pop();
+                ship1 = _qsite[0].front();
+                _qsite[0].pop();
+
+                war(ship0, ship1);
+            }
+            break;
+        default:
+            cout << "Blad podczas rozzgrywania tury!" << endl;
+            return 1;
+    }
+    return 0;
 }
