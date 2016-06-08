@@ -10,29 +10,35 @@
 
 using namespace std;
 
+//! Struktura opisująca stronę biorącą udział w bitwie
 struct site {
-    string siteName;
+    string siteName; ///< Nazwa strony biorącej udział w bitwie
 
-    vector<Destroyer> _destroyers;
-    vector<Cruiser> _cruisers;
-    vector<Battleship> _battleships;
-    vector<AircraftCarrier> _aircraftCarriers;
+    vector<Destroyer> _destroyers; ///< Wektor przechowujący niszczyciele danej strony
+    vector<Cruiser> _cruisers; ///< Wektor przechowujący krążowniki danej strony
+    vector<Battleship> _battleships; ///< Wektor przechowujący pancerniki danej strony
+    vector<AircraftCarrier> _aircraftCarriers; ///< Wektor przechowujący lotniskowce danej strony
 };
 
+//! Klasa opisująca bitwę
 class Battle {
-    site _site[2];
-    queue<Ship *> _qsite[2];
+    site _site[2]; ///< Tablica przechowująca strony w bitwie
+    queue<Ship *> _qsite[2]; ///< Kolejka przechowująca statki w aktualnej turze
 
 public:
+	//! Konstruktr klasy
+    Battle();
 
-    Battle(); /// Create a Battle
+	//! Funkcja głównej pętli symulacji
+    bool mainLoop();
 
-    bool mainLoop(); /// \fn mainLoopMain simulation loop
+	//! Funkcja losująca statki i dodająca je do kolejki
+    int drawShip(unsigned int n);
 
-    int drawShip(unsigned int n); /// \fn drawShip Function draws ships, adding them to the queue.
+	//! Funkcja pokazująca przeciwników w bitwie
+    void showSites();
 
-    void showSites(); /// \fn Function shows opponents in battle.
-
+	//! Funkcja opisująca turę
     int turn(int wf);
 };
 

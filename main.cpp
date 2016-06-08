@@ -5,7 +5,7 @@
 #include "Battle.h"
 
 int main(int argc, char *argv[]) {
-    int seed;
+    int seed; ///< Przechowuje seed generatora liczb pseudolosowych
     if (argc == 2) seed = atoi(argv[1]);
     else seed = time(NULL);
     srand((unsigned int) seed);

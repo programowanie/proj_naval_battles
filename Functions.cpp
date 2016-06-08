@@ -6,7 +6,7 @@ using namespace std;
 
 void read(const string &file_name, Parameters tab[]) {
     int typeOfWarship;
-    ifstream file;
+    ifstream file; ///< Zmienna plikowa
     file.open(file_name.c_str());
     if (!file.good()) exit(404);
 

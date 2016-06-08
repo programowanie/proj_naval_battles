@@ -4,8 +4,8 @@
 
 using namespace std;
 
-const string sourceUSA = "USA.dat";
-const string sourceJAPAN = "JAPAN.dat";
+const string sourceUSA = "USA.dat"; ///< Zmienna przechowująca źródło parametrów dla strony USA
+const string sourceJAPAN = "JAPAN.dat"; ///< Zmienna przechowująca źródło parametrów dla strony Japońskiej
 
 
 Battle::Battle() {
@@ -50,9 +50,9 @@ Battle::Battle() {
 }
 
 bool Battle::mainLoop() {
-    int turnNumber = 0;
-    int whoFirst;
-    int end = 0;
+    int turnNumber = 0; ///< Zmienna przechowująca liczbę rozegranych tur
+    int whoFirst; ///< Zmienna przechowująca parametr oznaczający pierwszeństwo przeciwnika
+    int end = 0; ///< Zmienna przechowująca stan bitwy
 
     while (!end) {
         system("clear");
@@ -85,8 +85,10 @@ bool Battle::mainLoop() {
 }
 
 void Battle::showSites() {
+	//! Tablice przechowujące oznczenie wylosowanego lub zniszczonego okrętu
     unsigned int destroyers[2][2]{}, cruisers[2][2]{}, battleships[2][2]{}, aircraftCarriers[2][2]{};
 
+	//! Pętra sprawdzająca stan okrętów
     for (int j = 0; j < 2; j++) {
         for (int i = 0; i < 4; i++) {
             if (_site[j]._destroyers[i].isAlive()) destroyers[j][j]++;
@@ -110,9 +112,9 @@ void Battle::showSites() {
 }
 
 int Battle::drawShip(unsigned int n) {
-    Ship *wsk = NULL;
+    Ship *wsk = NULL; ///< Wskaźnik na okręt
 
-    int x = 15;
+    int x = 15; ///< Liczba dostępnych okrętów do wylosowania
 
     int what, which;
     int drawn[4][4]{};
