@@ -4,8 +4,15 @@
 
 using namespace std;
 
+//! Rodzaj okętu modelowany przez daną klasę.
+/*!
+ * Wartości tego typu służą jako identyfikatory dostępnych rodzai okręów.
+ */
 enum typeOfWarship {
-    DESTROYER, CRUISER, BATTLESHIP, AIRCRAFTCARRIER
+    DESTROYER /*! Okręt jest niszczycielem */,
+    CRUISER /*! Okręt jest krążownikiem */,
+    BATTLESHIP /*! Okręt jest pancernikiem */,
+    AIRCRAFTCARRIER /*! Okręt jest lotniskowcem */
 };
 
 struct Parameters {
