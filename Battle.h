@@ -24,12 +24,14 @@ class Battle {
     queue<Ship *> _qsite[2];
 
 public:
-    Battle();
 
-    bool mainLoop();
+    Battle(); /// Create a Battle
 
-    int drawShip(unsigned int n);
-    void showSites();
+    bool mainLoop(); /// \fn mainLoopMain simulation loop
+
+    int drawShip(unsigned int n); /// \fn drawShip Function draws ships, adding them to the queue.
+
+    void showSites(); /// \fn Function shows opponents in battle.
 
     int turn(int wf);
 };

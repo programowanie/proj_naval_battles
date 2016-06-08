@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['_5fagility',['_agility',['../class_ship.html#a28defb88168c7f977ae06a023a2de772',1,'Ship']]],
+  ['_5faircraftcarriers',['_aircraftCarriers',['../structsite.html#a19551d075f273b4c5546f704f01ad471',1,'site']]],
+  ['_5faircraftinsquadron',['_aircraftInSquadron',['../class_ship.html#a2c837b0bd540df9da7826ee0e2ac0bf1',1,'Ship']]],
+  ['_5famountofantiaircraftcannons',['_amountOfAntiAircraftCannons',['../class_ship.html#ac6b6499ae6b669db54cbd640e9bba7ec',1,'Ship']]],
+  ['_5famountofcannons',['_amountOfCannons',['../class_ship.html#a347e40d66fe5a0282309ffd280d5f596',1,'Ship']]],
+  ['_5famountofsquadrons',['_amountOfSquadrons',['../class_ship.html#a6177a736c0cefe335b0aa4ea5fe59958',1,'Ship']]],
+  ['_5famountoftorpedos',['_amountOfTorpedos',['../class_ship.html#aeb1a24d770dc9dc85c5b4a70bf5bbff5',1,'Ship']]],
+  ['_5farmor',['_armor',['../class_ship.html#ac47a2f3ff405ca582bb0eb40c656c0e3',1,'Ship']]],
+  ['_5fbasehppersquadron',['_baseHpPerSquadron',['../class_ship.html#a648d4df59880f64ee8f7d1b30dc7c3f2',1,'Ship']]],
+  ['_5fbattleships',['_battleships',['../structsite.html#ad15b3351029ffbb3ea21c75e05f6a1b3',1,'site']]],
+  ['_5fcamouflage',['_camouflage',['../class_ship.html#aa0df6c32a4745b65ba7bb0ed4368f15e',1,'Ship']]],
+  ['_5fchanceforarson',['_chanceForArson',['../class_ship.html#ae77c4ff11f205f30804f750e36a956ab',1,'Ship']]],
+  ['_5fchanceforarsonbyhe',['_chanceForArsonByHe',['../class_ship.html#a5ae7f8df8dec0c92ce8f778e37c0fafb',1,'Ship']]],
+  ['_5fcruisers',['_cruisers',['../structsite.html#ae2ae4dc2c4f396ead27233eb03e7756f',1,'site']]],
+  ['_5fdestroyers',['_destroyers',['../structsite.html#af920c7e8cfc6306cde0d45b9850af20e',1,'site']]],
+  ['_5fdmgpersquadron',['_dmgPerSquadron',['../class_ship.html#a73bfeb8252997fc26bfb0c994ec1c0df',1,'Ship']]],
+  ['_5ffiringrange',['_firingRange',['../class_ship.html#a070c1763b821ed7ba50931558283e82c',1,'Ship']]],
+  ['_5fhp',['_hp',['../class_ship.html#a2651d11a4926fe1b2eb65883565e8bd3',1,'Ship']]],
+  ['_5fmaxantiaircraftcannonsdmg',['_maxAntiAircraftCannonsDmg',['../class_ship.html#a30a5533d9feec6fea05ae3b9472361b6',1,'Ship']]],
+  ['_5fmaxapshelldmg',['_maxApShellDmg',['../class_ship.html#aa936c394b1cc8f19cb4e5d66a7223e63',1,'Ship']]],
+  ['_5fmaxheshelldmg',['_maxHeShellDmg',['../class_ship.html#ab24d3443c476283386c89754fd433670',1,'Ship']]],
+  ['_5fmaxtorpedodmg',['_maxTorpedoDmg',['../class_ship.html#adc1f7e5d7b3db9420ce78c81ba7d64f1',1,'Ship']]],
+  ['_5fname',['_name',['../class_ship.html#a68cf161799aadcbbe1c7b28b9dd10849',1,'Ship']]],
+  ['_5ftorpedorange',['_torpedoRange',['../class_ship.html#af3e30d448490de75365944a9b8715445',1,'Ship']]],
+  ['_5ftype',['_type',['../class_ship.html#a5a32460ba76649a09aa9c9d4df332217',1,'Ship']]]
+];
